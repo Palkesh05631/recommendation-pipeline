@@ -1,0 +1,42 @@
+# Central configuration: every stage reads its parameters from here.
+project:
+  seed: 42
+
+paths:
+  raw: data/raw
+  processed: data/processed
+  features: data/features
+  errors: data/errors
+  models: models
+  reports: reports
+
+data:
+  source: auto              # auto = try MovieLens-100K download, fall back to synthetic
+                            # movielens | synthetic to force one of them
+  movielens_url: https://files.grouplens.org/datasets/movielens/ml-100k.zip
+  synthetic:
+    n_users: 600
+    n_items: 500
+    mean_interactions_per_user: 40
+  inject_bad_rows: true     # adds known-bad rows so the validation stage has something to catch
+
+validation:
+  rating_min: 1
+  rating_max: 5
+  age_min: 5
+  age_max: 100
+  min_timestamp: 631152000  # 1990-01-01 UTC; anything earlier is invalid
+
+split:
+  strategy: per_user_time   # per_user_time | global_time
+  test_fraction: 0.2        # latest 20% of interactions form the test set
+  min_user_interactions: 5  # per_user_time: users with fewer interactions stay entirely in train
+
+model:
+  k: 10                     # top-K for ranking metrics
+  relevance_threshold: 4    # test rating >= 4 counts as "relevant"
+  svd_components: 30
+
+mlflow:
+  tracking_db: mlflow.db
+  experiment_name: recsys-pipeline

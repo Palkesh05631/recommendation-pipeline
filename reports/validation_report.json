@@ -1,0 +1,46 @@
+{
+  "users": {
+    "total_rows": 948,
+    "valid_rows": 943,
+    "error_rows": 5,
+    "checks": {
+      "missing_user_id": 0,
+      "invalid_dtype_user_id": 0,
+      "invalid_dtype_age": 0,
+      "invalid_age": 2,
+      "duplicate_user_id": 3
+    }
+  },
+  "items": {
+    "total_rows": 1687,
+    "valid_rows": 1682,
+    "error_rows": 5,
+    "checks": {
+      "missing_item_id": 0,
+      "invalid_dtype_item_id": 0,
+      "missing_title": 2,
+      "duplicate_item_id": 3,
+      "invalid_genre_flag": 0
+    }
+  },
+  "interactions": {
+    "total_rows": 100109,
+    "valid_rows": 99978,
+    "error_rows": 131,
+    "checks": {
+      "missing_user_id": 0,
+      "missing_item_id": 0,
+      "missing_rating": 10,
+      "missing_timestamp": 0,
+      "invalid_dtype_user_id": 0,
+      "invalid_dtype_item_id": 0,
+      "invalid_dtype_rating": 8,
+      "invalid_dtype_timestamp": 0,
+      "invalid_rating": 25,
+      "invalid_timestamp": 16,
+      "orphan_user_id": 10,
+      "orphan_item_id": 10,
+      "duplicate_interaction": 52
+    }
+  }
+}

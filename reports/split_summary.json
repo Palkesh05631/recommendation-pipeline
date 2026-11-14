@@ -1,0 +1,20 @@
+{
+  "strategy": "per_user_time",
+  "split_cutoff": "per-user: last 20% of each user's history",
+  "train_rows": 79601,
+  "test_rows": 20377,
+  "train_range": [
+    "1997-09-20 03:05:10",
+    "1998-04-22 23:10:38"
+  ],
+  "test_range": [
+    "1997-09-20 20:18:15",
+    "1998-04-22 23:10:38"
+  ],
+  "matrix_shape": [
+    943,
+    1682
+  ],
+  "matrix_density": 0.05019,
+  "test_rows_from_users_unseen_in_train": 0
+}
